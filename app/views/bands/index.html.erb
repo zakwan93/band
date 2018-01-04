@@ -1,0 +1,12 @@
+<center style= "color: gray;">
+<% @bands.each do |t| %>
+	<tr>
+	<td>Name :- <%= t.name %></td>
+	<td>Genre :- <%= t.genre %></td>
+	<td>Explicit Lyrics :- <%= t.explicit_lyrics %></td>
+	</tr>
+ <% end %>
+
+</center>
+
+<h3><%= link_to "Add New Band", new_band_path %> </h3>

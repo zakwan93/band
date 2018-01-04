@@ -1,0 +1,19 @@
+<center><h2>Add new Venue</h2>
+
+<%= form_for @venues do %>
+  <li> Name: <%= text_field_tag :name %></li>
+  <li> City: <%= text_field_tag :city %></li>
+  <li> State: <%= text_field_tag :state %></li>
+  
+  
+<li>Family Friendly
+    <%= radio_button_tag :family_friendly, 'true' %> TRUE
+   <%= radio_button_tag :family_friendly, 'false' %> FALSE<br />
+</li>
+<center> <h2> <%= submit_tag "Add" %> </h2></center>
+
+
+
+<% end %>
+
+</center>

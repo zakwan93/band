@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Band App!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">MusicBand.IO</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!-- <ul class="nav navbar-nav">
+        <li ><a href="#">Home</a></li>
+        
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MENU <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          	<li><a><%= link_to "Add New Venue", new_venue_path %></a></li>
+          	<li><a><%= link_to "Add New Event", new_event_path %></a></li>
+          	<li><a><%= link_to "Add New Band", new_band_path %></a></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class= "background">
+	<img src="music.jpg" width="100%" height="100%">
+
+</div>
+
+<div class="about-band">
+
+<div class="page-header">
+    <center><h1>The Best Pop Rock Bands & Artists</h1></center>    
+</div>
+
+<table class="table table-striped table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Band Name</th>
+      <th>Genres(Music)</th>
+      <th>Top Album</th>
+      <th>Career Began</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>The Beatles</td>
+      <td>Pop music, Rock music, Pop rock +more</td>
+      <td>Abbey Road, Revolver</td>
+      <td>Liverpool, United Kingdom</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Queen</td>
+      <td>Pop music, Rock music, Heavy metal +more</td>
+      <td>A Night at the Opera, Queen</td>
+      <td>London, United Kingdom</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>The Beach Boys</td>
+      <td>Pop music, Rock music, Psychedelic pop +more</td>
+      <td>Pet Sounds, Ultimate Christmas </td>
+      <td>Hawthorne, California, United States of America</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>The Rolling Stones</td>
+      <td>Blues-rock, Rock music, Protopunk +more</td>
+      <td>Let It Bleed, Exile on Main St </td>
+      <td>London, United Kingdom</td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>Michael Jackson</td>
+      <td>Motown Sound, Rock music, Electronic music +more</td>
+      <td>Thriller, Bad, Off the Wall </td>
+      <td>Gary, Indiana, United States of America</td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>The Byrds</td>
+      <td>Jangle pop, Pop music, Raga rock +more</td>
+      <td>Sweetheart of the Rodeo, Younger Than Yesterday </td>
+      <td>Los Angeles, California, United States of America</td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td>Madonna</td>
+      <td>Pop music, Rock music, Electronic music +more</td>
+      <td>Like a Virgin, Like a Prayer, Music </td>
+      <td>New York City, New York, United States of America</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>Maroon 5</td>
+      <td>Jazz rap, Ballad, Neo soul +more</td>
+      <td>Songs About Jane, Hands All Over, Payphone</td>
+      <td>Los Angeles, California, United States of America</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>OneRepublic</td>
+      <td>Pop music, Rock music, Piano rock +more</td>
+      <td>Dreaming Out Loud, Waking Up </td>
+      <td>Colorado Springs, Colorado, United States of America</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td>Billy Joel</td>
+      <td>: Blue-eyed soul, Pop music, Rock music +more</td>
+      <td>The Stranger, Piano Man, 52nd Street </td>
+      <td>New York City, New York, United States of America</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+<!-- 
+
+<div class="container">
+<h3>
+<% @venues.each do |t| %>
+	<tr>
+	<td>Name :- <%= t.name %></td>
+	<td>City :- <%= t.city %></td>
+	<td>State :- <%= t.state %></td>
+	<td>family_friendly :- <%= t.family_friendly %></td>
+	</tr>
+ <% end %>
+</h3>
+
+
+<h3>
+<% @bands.each do |t| %>
+	<tr>
+	<td>Name :- <%= t.name %></td>
+	<td>Genre :- <%= t.genre %></td>
+	<td>Explicit Lyrics :- <%= t.explicit_lyrics %></td>
+	</tr>
+ <% end %>
+</h3>
+
+<center>
+ <h3><%= link_to "Add New Venue", new_venue_path %> </h3>
+		 <h3><%= link_to "Add New Band", new_band_path %> </h3> 
+		 <h3><%= link_to "Add New Event", new_event_path %> </h3> </center>
+</center>
+
+</div>
+
+
+ -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
+
+

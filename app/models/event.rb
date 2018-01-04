@@ -1,8 +1,4 @@
 class Event < ApplicationRecord
-	has_one :vanue
-end
-
-
-class Event < ApplicationRecord
-	belongs_to :vanue
+	belongs_to :venue
+	belongs_to :band
 end

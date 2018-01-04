@@ -1,0 +1,11 @@
+<center style= "color: gray;">
+<% @events.each do |t| %>
+	<tr>
+	<td>Event date :- <%= t.event_date %></td>
+	<td>Alcohol_Served :- <%= t.alcohol_served %></td>
+	</tr>
+ <% end %>
+
+</center>
+
+<center><h3><%= link_to "Add New Event", new_event_path %> </h3> </center>

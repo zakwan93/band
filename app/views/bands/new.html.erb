@@ -1,0 +1,16 @@
+<center><h2>Add new Band</h2>
+
+<%= form_for @bands do %>
+  <li> Name: <%= text_field_tag :name %></li>
+  <li> Genre: <%= text_field_tag :genre %></li>
+  <li> explicit_lyrics 
+    <%= radio_button_tag :explicit_lyrics, 'true' %> TRUE
+   <%= radio_button_tag :explicit_lyrics, 'false' %> FALSE<br />
+</li>
+<center> <h2> <%= submit_tag "Add" %> </h2></center>
+
+
+
+<% end %>
+
+</center>

@@ -13,8 +13,25 @@ class BandsController < ApplicationController
 	end
 
 	def create
-		@bands= Band.create(name: params[:name], genre: params[:genre], explicit_lyrics: params[:explicit_lyrics])
+		@bands= Band.create(name: params[:band][:name], genre: params[:band][:genre], explicit_lyrics: params[:band][:explicit_lyrics])
 		redirect_to bands_path
 	end
+
+
+	def edit
+		@bands = Band.find(params[:id])
+	end
+
+	def update
+		@bands = Band.find(params[:id])
+		@bands.update(name: params[:name], genre: params[:genre], explicit_lyrics: params[:explicit_lyrics])
+   		redirect_to bands_path
+   	end
+
+   	def destroy
+   		@bands = Band.find(params[:id])
+   		@bands.delete
+   		redirect_to bands_path
+   	end
 
 end

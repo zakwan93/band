@@ -19,12 +19,11 @@
       <a class="navbar-brand" href="#">MusicBand.IO</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <!-- <ul class="nav navbar-nav">
-        <li ><a href="#">Home</a></li>
-        
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul> -->
+      <ul class="nav navbar-nav">
+        <li><a <%= link_to "Venues", venues_path %></a></li> 
+        <li><a <%= link_to "Bands", bands_path %></a></li>
+        <li><a <%= link_to "Events", events_path %></a></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
         <li class="dropdown">
@@ -152,6 +151,7 @@
       <th>City</th>
       <th>State</th>
       <th>Family Friendly</th>
+      <th>Edit-Cancel Event</th>
     </tr>
   </thead>
   <tbody>
@@ -162,6 +162,9 @@
       <td><%= t.city %></td>
       <td><%= t.state %></td>
       <td><%= t.family_friendly %></td>
+      <td><%= link_to "Edit", edit_venue_path(t) %> -
+          <%= link_to "Remove", venue_path(t), method: :delete, data: { confirm: "Are you sure?" } %>
+      </td>
     </tr>
     <% end %>
 </tbody>
@@ -183,6 +186,7 @@
       <th>Band Name</th>
       <th>Genre</th>
       <th>Explicit Lyrics</th>
+      <th>Edit-Cancel Event</th>
     </tr>
   </thead>
   <tbody>
@@ -192,6 +196,9 @@
       <td><%= t.name %></td>
       <td><%= t.genre %></td>
       <td><%= t.explicit_lyrics %></td>
+      <td><%= link_to "Edit", edit_band_path(t) %> -
+          <%= link_to "Remove", band_path(t), method: :delete, data: { confirm: "Are you sure?" } %>
+      </td>
     </tr>
     <% end %>
 </tbody>

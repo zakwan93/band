@@ -17,7 +17,6 @@ class BandsController < ApplicationController
 		redirect_to bands_path
 	end
 
-
 	def edit
 		@bands = Band.find(params[:id])
 	end

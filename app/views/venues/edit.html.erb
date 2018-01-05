@@ -38,8 +38,11 @@
             <div class="form-group">
               <%= label :state, "Family Friendly", class: "col-md-4 control-label" %>
               <div class="radio">
-                <label><%= radio_button :family_friendly, @venues.family_friendly, 'Yes', :checked => true %> Yes</label>
-                <label><%= radio_button :family_friendly, @venues.family_friendly, 'No', :checked => false %> No</label>
+
+
+                <label><%= radio_button :family_friendly, @venues.family_friendly, 'true' %> Yes</label>
+                <label><%= radio_button :family_friendly, @venues.family_friendly, 'false' %> No</label>
+
               </div>
             </div>
             

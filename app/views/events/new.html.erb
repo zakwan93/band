@@ -33,7 +33,7 @@
 
             <div class="form-group">
               <%= f.label :alcohol_served, class: "col-sm-2 control-label" %>  
-              <%= f.select :alcohol_served, [["Yes", "true"], ["No", "false"]], {}, {class: "form-control"} %>  
+              <%= f.select :alcohol_served, [["Yes", true], ["No", false]], {}, {class: "form-control"} %>  
             </div>
 
           <%= submit_tag 'Add', class: 'btn btn-primary btn-block' %>

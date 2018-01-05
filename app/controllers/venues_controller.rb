@@ -4,6 +4,7 @@ class VenuesController < ApplicationController
 	def index
   		@venues = Venue.all
   		@bands = Band.all
+  		@events = Event.all
 	end
 
 	def new

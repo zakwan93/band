@@ -18,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="vanues">MusicBand.IO</a>
+      <a class="navbar-brand" href="#">MusicBand.IO</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -49,6 +49,8 @@
   <thead>
     <tr>
       <th>#</th>
+      <th>Venue Id</th>
+      <th>Band_Id</th>
       <th>Event Date</th>
       <th>Alcohol Served</th>
     </tr>
@@ -57,6 +59,8 @@
   	<% @events.each do |t| %>
     <tr>
       <th scope="row">1</th>
+      <td><%= t.venue_id %></td>
+      <td><%= t.band_id %></td>
       <td><%= t.event_date %></td>
       <td><%= t.alcohol_served %></td>
     </tr>

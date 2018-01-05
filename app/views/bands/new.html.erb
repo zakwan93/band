@@ -1,16 +1,54 @@
-<center><h2>Add new Band</h2>
 
-<%= form_for @bands do %>
-  <li> Name: <%= text_field_tag :name %></li>
-  <li> Genre: <%= text_field_tag :genre %></li>
-  <li> explicit_lyrics 
-    <%= radio_button_tag :explicit_lyrics, 'true' %> TRUE
-   <%= radio_button_tag :explicit_lyrics, 'false' %> FALSE<br />
-</li>
-<center> <h2> <%= submit_tag "Add" %> </h2></center>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Band</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+  <div class="jumbotron">
+	<h2>Add New Band</h2>
+
+<%= form_for @bands, :html => {:class => "form-horizontal"} do |f| %>
+
+  <div class="form-group">
+        <%= f.label :name, "Name", class: "col-sm-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+  </div>
+
+  <div class="form-group">
+        <%= f.label :genre, "Genre", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :genre, class: "form-control" %>
+        </div>
+  </div>
 
 
+  <div class="form-group">
+        <%= f.label :explicit_lyrics, "Explicit Lyrics", class: "col-md-4 control-label" %>
+      <div class="radio">
+        <label><%= f.radio_button :explicit_lyrics, 'Yes', :checked => true %> Yes</label>
+       <label><%= f.radio_button :explicit_lyrics, 'No', :checked => false %> No</label>
+      </div>
+      </div>
+
+
+  <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
 
 <% end %>
+</div>
+</div>
 
-</center>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+

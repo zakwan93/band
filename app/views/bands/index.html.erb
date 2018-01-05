@@ -1,12 +1,51 @@
-<center style= "color: gray;">
-<% @bands.each do |t| %>
-	<tr>
-	<td>Name :- <%= t.name %></td>
-	<td>Genre :- <%= t.genre %></td>
-	<td>Explicit Lyrics :- <%= t.explicit_lyrics %></td>
-	</tr>
- <% end %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Band App!</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-</center>
+<body>
 
-<h3><%= link_to "Add New Band", new_band_path %> </h3>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Most Amazing Bands and Artist</h1> <br>
+
+<table class="table table-striped table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Band Name</th>
+      <th>Genre</th>
+      <th>Explicit Lyrics</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @bands.each do |t| %>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= t.name %></td>
+      <td><%= t.genre %></td>
+      <td><%= t.explicit_lyrics %></td>
+    </tr>
+    <% end %>
+</tbody>
+</table>
+
+</div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
+
+

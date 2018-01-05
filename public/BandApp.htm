@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:3000/bands/new -->
+<html class="gr__localhost"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BandApp</title>
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Hmg8LWU9eKiuoo+13dh/qDegAbyA1NASLD6V/tkLWawBByXT2vI6nNcwKSuiNC//B9c8iXQqAKbcA7xyILnrHQ==">
+
+    <link rel="stylesheet" media="all" href="./BandApp_files/band.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="./BandApp_files/bands.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="./BandApp_files/event.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="./BandApp_files/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="./BandApp_files/venue.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="./BandApp_files/venues.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload">
+<link rel="stylesheet" media="all" href="./BandApp_files/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css" data-turbolinks-track="reload">
+    <script src="./BandApp_files/rails-ujs.self-817d9a8cb641f7125060cb18fefada3f35339170767c4e003105f92d4c204e39.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/band.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/bands.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/event.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/venue.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/venues.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./BandApp_files/application.self-eba3cb53a585a0960ade5a8cb94253892706bb20e3f12097a13463b1f12a4528.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+    
+
+
+
+	<title>New Band</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./BandApp_files/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./BandApp_files/style.css">
+
+
+	<div class="container">
+  <div class="jumbotron">
+	<h2>Add New Band</h2>
+
+<form class="new_band" id="new_band" action="http://localhost:3000/bands" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Hmg8LWU9eKiuoo+13dh/qDegAbyA1NASLD6V/tkLWawBByXT2vI6nNcwKSuiNC//B9c8iXQqAKbcA7xyILnrHQ==">
+
+  <div class="form-group">
+        <label class="col-sm-4 control-label" for="band_name">Name</label>
+        <div class="col-md-8">
+          <input class="form-control" type="text" name="band[name]" id="band_name">
+        </div>
+  </div>
+
+  <div class="form-group">
+        <label class="col-md-4 control-label" for="band_genre">Genre</label>
+        <div class="col-md-8">
+          <input class="form-control" type="text" name="band[genre]" id="band_genre">
+        </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="band_explicit_lyrics">Explicit lyrics</label>  
+    
+    	<select class="form-control" name="band[explicit_lyrics]" id="band_explicit_lyrics"><option value="true">Yes</option>
+<option selected="selected" value="false">No</option></select>  
+  </div>
+
+  <input type="submit" name="commit" value="Save" class="btn btn-primary btn-block" data-disable-with="Save">
+
+</form></div>
+</div>
+
+
+<script src="./BandApp_files/jquery.min.js"></script>
+<script src="./BandApp_files/bootstrap.min.js"></script>
+
+
+
+
+
+
+<!-- 
+<center><h2>Add new Band</h2>
+
+<form class="new_band" id="new_band" action="/bands" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="W865aSpGKspc/GMMFszt6Qmw8XYZVt2lgfbdGSjxi4Isfep6C34tCVk0br5PeW5V9O5kD+Kx0YxwUNF5/c50oQ==" />
+  <li> Name: <input type="text" name="name" id="name" /></li>
+  <li> Genre: <input type="text" name="genre" id="genre" /></li>
+  <li> explicit_lyrics 
+    <input type="radio" name="explicit_lyrics" id="explicit_lyrics_true" value="true" /> TRUE
+   <input type="radio" name="explicit_lyrics" id="explicit_lyrics_false" value="false" /> FALSE<br />
+</li>
+<center> <h2> <input type="submit" name="commit" value="Add" data-disable-with="Add" /> </h2></center>
+
+
+
+</form>
+</center>
+
+</body>
+</html>
+  </body>
+</html>
+--></body></html>

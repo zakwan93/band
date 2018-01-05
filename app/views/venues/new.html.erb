@@ -1,5 +1,58 @@
-<center><h2>Add new Venue</h2>
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Venue Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="container">
+  <div class="jumbotron">
+	<h2>Add new Venue</h2>
+<%= form_for @venues, :html => {:class => "form-horizontal"} do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Name:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :city, "City:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :city, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label :state, "State:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :state, class: "form-control" %>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :state, "Family Friendly", class: "col-md-4 control-label" %>
+      <div class="radio">
+        <label><%= f.radio_button :family_friendly, 'Yes', :checked => true %> Yes</label>
+       <label><%= f.radio_button :family_friendly, 'No', :checked => false %> No</label>
+      </div>
+      </div>
+      <center><%= submit_tag "Add", class: "btn btn-default btn-primary" %></center>  
+ <% end %>
+</div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<!-- 
 <%= form_for @venues do %>
   <li> Name: <%= text_field_tag :name %></li>
   <li> City: <%= text_field_tag :city %></li>
@@ -15,5 +68,11 @@
 
 
 <% end %>
+ -->
 
-</center>
+</body>
+</html>
+
+
+
+

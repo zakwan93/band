@@ -1,16 +1,43 @@
-<center><h2>Add new Event</h2>
 
-<%= form_for @events do %>
-  <li> Name: <%= text_field_tag :name %></li>
-  <li> Genre: <%= text_field_tag :genre %></li>
-  <li> explicit_lyrics 
-    <%= radio_button_tag :explicit_lyrics, 'true' %> TRUE
-   <%= radio_button_tag :explicit_lyrics, 'false' %> FALSE<br />
-</li>
-<center> <h2> <%= submit_tag "Add" %> </h2></center>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Event</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+  <div class="jumbotron">
+	<h2>Add new Event</h2>
 
+<%= form_for @events, class: "form-horizontal" do |f| %>
+	
+	<%= f.hidden_field :band_id, class: "form-control" %>
+	<%= f.hidden_field :venue_id, class: "form-control" %>
 
+  <div class="form-group">
+    <%= f.label :event_date, class: "col-sm-2 control-label" %> 
+    <%= f.date_field :event_date, class: "form-control" %>  
+  </div>
+
+  <div class="form-group">
+    <%= f.label :alcohol_served, class: "col-sm-2 control-label" %>  
+    
+    	<%= f.select :alcohol_served, [["Yes", "true"], ["No", "false"]], {}, {class: "form-control"} %>  
+  </div>
+
+  <%= submit_tag 'Add', class: 'btn btn-primary btn-block' %>
 
 <% end %>
+</div>
+</div>
 
-</center>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>

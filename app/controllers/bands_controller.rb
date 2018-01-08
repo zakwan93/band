@@ -1,5 +1,7 @@
 class BandsController < ApplicationController
 
+	respond_to? :js, only: :create
+
 	def index
   		@bands = Band.all
 	end
@@ -14,7 +16,8 @@ class BandsController < ApplicationController
 
 	def create
 		if Band.exists?(:name => params[:band][:name])
-			redirect_to bands_path
+			@message = "Band exist......"
+			redirect_to bands_path	
 		else
 			@bands= Band.create(name: params[:band][:name], genre: params[:band][:genre], explicit_lyrics: params[:band][:explicit_lyrics])
 			redirect_to bands_path

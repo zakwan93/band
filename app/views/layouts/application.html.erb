@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Band App!</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>Band App!</title>
+      <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/Footer-white.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/Footer-white.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
 
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-         <span class="icon-bar"></span>                           
-      </button>
-      <a class="navbar-brand" href="#">MusicBand.IO</a>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                           
+        </button>
+        <a class="navbar-brand" href="#">MusicBand.IO</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a <%= link_to "Venues", venues_path %></a></li> 
+          <li><a <%= link_to "Bands", bands_path %></a></li>
+          <li><a <%= link_to "Events", events_path %></a></li>
+         <!--  <li><a href="https://www.timeout.com/newyork/events-calendar/january-events-calendar" class="btn btn-info" role="button">NYC Events</a></li> 
+          <li><a href="https://www.thetoptens.com/rock-bands/" class="btn btn-info" role="button">Top 20 Bands</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">MENU <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a><%= link_to "Add New Venue", new_venue_path %></a></li>
+              <li><a><%= link_to "Add New Band", new_band_path %></a></li>
+              <li><a><%= link_to "Add New Event", new_event_path %></a></li>
+            </ul>
+          </li> 
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a <%= link_to "Venues", venues_path %></a></li> 
-        <li><a <%= link_to "Bands", bands_path %></a></li>
-        <li><a <%= link_to "Events", events_path %></a></li>
-       <!--  <li><a href="https://www.timeout.com/newyork/events-calendar/january-events-calendar" class="btn btn-info" role="button">NYC Events</a></li> 
-        <li><a href="https://www.thetoptens.com/rock-bands/" class="btn btn-info" role="button">Top 20 Bands</a></li> -->
-       </ul>
-
-
-      <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MENU <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a><%= link_to "Add New Venue", new_venue_path %></a></li>
-            <li><a><%= link_to "Add New Event", new_event_path %></a></li>
-            <li><a><%= link_to "Add New Band", new_band_path %></a></li>
-          </ul>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
 
 
 
@@ -58,30 +55,32 @@
 <%= yield %>
 
 
-<!-- 
-<div class="content">
-</div>
-    <footer id="myFooter">
-        <div class="container">
-            <ul>
-                <li><a href="#">Company Information</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Terms of service</a></li>
-            </ul>
-        <p class="footer-copyright">© 2018 MusicBand.IO</p>
-        
-        <div class="footer-social">
-            <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
-            <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
-        </div>
-        </div>
-    </footer>
+  <!-- 
+  <div class="content">
+  </div>
+      <footer id="myFooter">
+          <div class="container">
+              <ul>
+                  <li><a href="#">Company Information</a></li>
+                  <li><a href="#">Contact us</a></li>
+                  <li><a href="#">Reviews</a></li>
+                  <li><a href="#">Terms of service</a></li>
+              </ul>
+          <p class="footer-copyright">© 2018 MusicBand.IO</p>
+          
+          <div class="footer-social">
+              <a href="#" class="social-icons"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="social-icons"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="social-icons"><i class="fa fa-twitter"></i></a>
+          </div>
+          </div>
+      </footer>
  -->  
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-</body>
+  </body>
+</html>
+
 

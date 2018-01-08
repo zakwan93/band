@@ -1,41 +1,31 @@
-	<div class="container">
+<div class="container">
   <div class="jumbotron">
-	<h2>Add New Band</h2>
+	   <h2>Add New Band</h2>
 
-<%= form_for @bands, :html => {:class => "form-horizontal"} do |f| %>
+        <%= form_for @bands, class: "form-horizontal" do |f| %>
+        
+          <div class="form-group">
+            <%= f.label :name, class: "col-sm-4 control-label" %>
+            <%= f.text_field :name, class: "form-control", :required => true %>
+          </div>
 
-  <div class="form-group">
-        <%= f.label :name, "Name", class: "col-sm-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :name, class: "form-control", :required => true %>
-        </div>
-  </div>
+          <div class="form-group">
+            <%= f.label :genre, class: "col-md-4 control-label" %>
+            <%= f.text_field :genre, class: "form-control", :required => true %>
+          </div>
 
-  <div class="form-group">
-        <%= f.label :genre, "Genre", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :genre, class: "form-control", :required => true %>
-        </div>
-  </div>
+          <div class="form-group">
+            <%= f.label :explicit_lyrics, class: "col-md-4 control-label" %> 
+            <%= f.select :explicit_lyrics, [["Yes", true], ["No", false]], {}, {class: "form-control"} %> 
+          </div> 
 
-
-
-  <div class="form-group">
-              <%= f.label :explicit_lyrics, class: "col-md-4 control-label" %>
-               <div class="col-md-8">  
-                  <%= f.select :explicit_lyrics, [["Yes", true], ["No", false]], {}, {class: "form-control"} %> 
-                </div> 
-  </div>
-
- <center><%= submit_tag "Add", class: "btn btn-default btn-primary" %>
+          <center><%= submit_tag "Add", class: "btn btn-default btn-primary" %>
             
-<% end %>
-<br><br>
+        <% end %>
+        <br><br>
         <center>
             <a <%= link_to "Go To Bands", bands_path, class: 'btn btn-default btn-primary' %></a>
         </center>
+  </div>
 </div>
-</div>
-
-
 

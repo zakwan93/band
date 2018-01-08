@@ -50,15 +50,19 @@
       <th>Band Name</th>
       <th>Genre</th>
       <th>Explicit Lyrics</th>
+      <th>Edit-Cancel Event</th>
     </tr>
   </thead>
   <tbody>
   	<% @bands.each do |t| %>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">=></th>
       <td><%= t.name %></td>
       <td><%= t.genre %></td>
       <td><%= t.explicit_lyrics %></td>
+      <td><%= link_to "Edit", edit_band_path(t) %> -
+          <%= link_to "Remove", band_path(t), method: :delete, data: { confirm: "Are you sure?" } %>
+      </td>
     </tr>
     <% end %>
 </tbody>

@@ -14,7 +14,8 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
+         <span class="icon-bar"></span>                           
       </button>
       <a class="navbar-brand" href="#">MusicBand.IO</a>
     </div>
@@ -23,7 +24,11 @@
         <li><a <%= link_to "Venues", venues_path %></a></li> 
         <li><a <%= link_to "Bands", bands_path %></a></li>
         <li><a <%= link_to "Events", events_path %></a></li>
-      </ul>
+       <!--  <li><a href="https://www.timeout.com/newyork/events-calendar/january-events-calendar" class="btn btn-info" role="button">NYC Events</a></li> 
+        <li><a href="https://www.thetoptens.com/rock-bands/" class="btn btn-info" role="button">Top 20 Bands</a></li> -->
+       </ul>
+
+
       <ul class="nav navbar-nav navbar-right">
         <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
         <li class="dropdown">
@@ -41,7 +46,6 @@
 </nav>
 <div class= "background">
 	<img src="music.jpg" width="100%" height="100%">
-
 </div>
 
 <div class="about-band">
@@ -157,7 +161,7 @@
   <tbody>
   	<% @venues.each do |t| %>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">=></th>
       <td><%= t.name %></td>
       <td><%= t.city %></td>
       <td><%= t.state %></td>
@@ -192,7 +196,7 @@
   <tbody>
   	<% @bands.each do |t| %>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">=></th>
       <td><%= t.name %></td>
       <td><%= t.genre %></td>
       <td><%= t.explicit_lyrics %></td>
@@ -204,8 +208,6 @@
 </tbody>
 </table>
 
-</div>
-</div>
 
 <div class="container">
   <div class="jumbotron">
@@ -219,19 +221,19 @@
       <th>Band_Id</th>
       <th>Event Date</th>
       <th>Alcohol Served</th>
-       <th>Edit-Cancel Event</th>
+      <th>Edit-Cancel Event</th>
     </tr>
   </thead>
   <tbody>
     <% @events.each do |t| %>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">=></th>
       <td><%= t.venue_id %></td>
       <td><%= t.band_id %></td>
       <td><%= t.event_date %></td>
       <td><%= t.alcohol_served %></td>
-      <td><%= link_to "Edit", edit_band_path(t) %> -
-          <%= link_to "Remove", band_path(t), method: :delete, data: { confirm: "Are you sure?" } %>
+      <td><%= link_to "Edit", edit_event_path(t) %> -
+          <%= link_to "Remove", event_path(t), method: :delete, data: { confirm: "Are you sure?" } %>
       </td>
     </tr>
     <% end %>
@@ -240,7 +242,7 @@
 
 </div>
 </div>
-
+</div>
 <!-- 
 <div class="container">
 <h3>
@@ -272,6 +274,7 @@
 </center>
 
 </div> -->
+
 
 
 

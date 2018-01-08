@@ -53,16 +53,19 @@
       <th>Band_Id</th>
       <th>Event Date</th>
       <th>Alcohol Served</th>
+      <th>Edit-Cancel Event</th>
     </tr>
   </thead>
   <tbody>
   	<% @events.each do |t| %>
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">=></th>
       <td><%= t.venue_id %></td>
       <td><%= t.band_id %></td>
       <td><%= t.event_date %></td>
       <td><%= t.alcohol_served %></td>
+      <td><%= link_to "Edit", edit_event_path(t) %> -
+          <%= link_to "Remove", event_path(t), method: :delete, data: { confirm: "Are you sure?" } %>
     </tr>
     <% end %>
 </tbody>

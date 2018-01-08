@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Event Detail</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div class="container">
+    <div class="jumbotron">
+     <h2>Edit Details of Event</h2>
+
+      <%= form_for @events, class: "form-horizontal" do |f| %>
+
+          <div class="form-group">
+              <%= f.label :venue_id, class: "col-sm-2 control-label" %>
+              <%= f.collection_select :venue_id, Venue.all, :id, :name, prompt: true%> 
+            </div>
+
+
+           <div class="form-group">
+              <%= f.label :band_id, class: "col-sm-2 control-label" %>
+              <%= f.collection_select :band_id, Band.all, :id, :name, prompt: true%> 
+            </div>
+
+
+            <div class="form-group">
+              <%= f.label :event_date, class: "col-sm-2 control-label" %> 
+              <%= f.date_field_tag :event_date, @events.event_date, class: "form-control", disabled: true %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :alcohol_served, class: "col-sm-2 control-label" %>  
+              <%= f.select :alcohol_served, [["Yes", true], ["No", false]], {}, @events.alcohol_served, {class: "form-control"} %>  
+            </div>
+            <center>
+                <%= submit_tag 'Add', class: 'btn btn-default btn-primary' %>
+                <%= submit_tag "All Events", class: 'btn btn-default btn-primary' %>
+                
+            </center>
+        <% end %>
+    </div>
+  </div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+

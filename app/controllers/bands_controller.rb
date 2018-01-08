@@ -13,8 +13,12 @@ class BandsController < ApplicationController
 	end
 
 	def create
-		@bands= Band.create(name: params[:band][:name], genre: params[:band][:genre], explicit_lyrics: params[:band][:explicit_lyrics])
-		redirect_to bands_path
+		if Band.exists?(:name => params[:band][:name])
+			redirect_to bands_path
+		else
+			@bands= Band.create(name: params[:band][:name], genre: params[:band][:genre], explicit_lyrics: params[:band][:explicit_lyrics])
+			redirect_to bands_path
+		end
 	end
 
 	def edit
